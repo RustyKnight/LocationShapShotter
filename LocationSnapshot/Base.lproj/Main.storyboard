@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,27 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tardius" translatesAutoresizingMaskIntoConstraints="NO" id="1KV-cR-xFF">
-                                <rect key="frame" x="59.5" y="205.5" width="256" height="256"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hw9-v7-nAY">
+                                <rect key="frame" x="59.5" y="73.5" width="256" height="520"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tardius" translatesAutoresizingMaskIntoConstraints="NO" id="1KV-cR-xFF">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="256" id="R8o-y0-FgE"/>
+                                            <constraint firstAttribute="width" secondItem="1KV-cR-xFF" secondAttribute="height" multiplier="1:1" id="gIS-LM-wTw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tardius" translatesAutoresizingMaskIntoConstraints="NO" id="Dsz-vE-ohM">
+                                        <rect key="frame" x="0.0" y="264" width="256" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="256" id="vjh-ex-NRY"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="256" id="R8o-y0-FgE"/>
-                                    <constraint firstAttribute="width" secondItem="1KV-cR-xFF" secondAttribute="height" multiplier="1:1" id="gIS-LM-wTw"/>
+                                    <constraint firstItem="Dsz-vE-ohM" firstAttribute="width" secondItem="Dsz-vE-ohM" secondAttribute="height" multiplier="1:1" id="1ph-cK-EeG"/>
                                 </constraints>
-                            </imageView>
+                            </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1KV-cR-xFF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gjg-An-Jyw"/>
-                            <constraint firstItem="1KV-cR-xFF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xGr-xL-B7k"/>
+                            <constraint firstItem="hw9-v7-nAY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G5P-Xq-qdl"/>
+                            <constraint firstItem="hw9-v7-nAY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="U8x-mR-jnz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapPreviewImageView" destination="1KV-cR-xFF" id="55s-fK-2xE"/>
+                        <outlet property="scenePreviewImageView" destination="Dsz-vE-ohM" id="xCU-pD-dmb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="14" y="-69"/>
         </scene>
     </scenes>
     <resources>
